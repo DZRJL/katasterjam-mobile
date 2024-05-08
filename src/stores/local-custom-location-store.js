@@ -66,7 +66,7 @@ export const useLocalCustomLocationStore = defineStore('local-custom-locations',
       this.searchParameters.pageNumber++
     },
     loadCustomLocations (customLocations) {
-        this.customLocations = customLocations
+      this.customLocations = customLocations
     },
     async get (id) {
       const result = await db.customLocations.where('id').equals(parseInt(id)).first()
@@ -98,7 +98,7 @@ export const useLocalCustomLocationStore = defineStore('local-custom-locations',
           const customLocations = response.data
 
           if (customLocations.length > 0) {
-          await db.customLocations.bulkPut(customLocations)
+            await db.customLocations.bulkPut(customLocations)
             await this.search()
           }
         }
