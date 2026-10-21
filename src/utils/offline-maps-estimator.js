@@ -2,7 +2,7 @@ export const MAX_TILE_COUNT = 200_000
 
 export const AVG_BYTES_PER_TILE = {
   VectorBasemap: 4_500,
-  LidarSkyView: 30_000,
+  LidarSkyView: 65_000,
   Ortho: 45_000
 }
 
