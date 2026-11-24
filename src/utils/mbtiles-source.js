@@ -6,7 +6,7 @@ export async function createNativeMBTilesSource (nativeDb) {
   const format = (meta.format || 'png').toLowerCase()
   const minZoom = meta.minzoom ? parseInt(meta.minzoom) : 0
   const maxZoom = meta.maxzoom ? parseInt(meta.maxzoom) : 18
-  const mime = format === 'jpg' || format === 'jpeg' ? 'image/jpeg' : 'image/png'
+  const mime = { jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp' }[format] || 'image/png'
 
   const { default: XYZ } = await import('ol/source/XYZ.js')
   const { default: TileState } = await import('ol/TileState.js')
